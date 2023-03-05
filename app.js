@@ -1,12 +1,10 @@
 const express = require('express')
 const app = express()
+const router = require('./routes/routes')
 
 let PORT = 8080
 
-app.get('/',(req,res)=> {
-    res.status(200).json({msg: 'Connected'})
-})
-
+app.use('/api',router)
 
 
 app.listen(PORT,console.log('Listening at PORT 8080....'))
